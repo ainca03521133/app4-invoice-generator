@@ -14,7 +14,20 @@ for filepath in filepaths:
     pdf.add_page()
     filename= Path(filepath).stem 
     #Path().stem獲取該路徑下的檔案名稱不包含附檔名
+    invoice_nr, invoice_date = filename.split("-")
+    """ 
     invoice_nr = filename.split("-")[0]
+    invoice_date = filename.split("-")[1] 
+    a,b = ["a","b"]
+    
+    """
+
     pdf.set_font(family="Times", size=16, style= "B")
-    pdf.cell(w=50, h=8, txt=f"Invoice nr.{invoice_nr}")
+    pdf.cell(w=50, h=14, txt=f"Invoice nr.{invoice_nr}", ln=1)
+
+    pdf.set_font(family="Times", size=16, style= "B")
+    pdf.cell(w=50, h=8, txt=f"Date:{invoice_date}")
+
+
+
     pdf.output(f"PDFs/{filename}.pdf")
