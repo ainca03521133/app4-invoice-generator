@@ -5,7 +5,7 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone https://github.com/yourusername/yourproject.git
+git clone [https://github.com/yourusername/yourproject.git](https://github.com/ainca03521133/app4-invoice-generator.git)
 Install required packages by running:
 
 bash
