@@ -11,9 +11,7 @@ pdf = FPDF(orientation="P", unit="mm", format="A4")
 
 for filepath in filepaths:
     filename= Path(filepath).stem
-    """ with open(filepath,'r') as f:
-        text = f.read()
-        print(text) """
+     
     name = filename.title()
     
     pdf.add_page()
@@ -21,6 +19,11 @@ for filepath in filepaths:
        
     pdf.set_font(family="Times",size= 20, style="B")
     pdf.cell(w=50, h=10, txt=name, ln=1 )
+
+    with open(filepath,'r') as f:
+        context = f.read()
+    pdf.set_font(family="Times",size= 10)
+    pdf.multi_cell(w=0 ,h=8, txt=context)
 
 pdf.output("pratice.pdf")
         
